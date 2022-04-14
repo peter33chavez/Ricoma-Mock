@@ -1,17 +1,16 @@
 import styled from "styled-components";
 import BackgroundImg from "../assets/images/hero-background-img.png";
 import BackgroundSquares from "../assets/Background-squares-mobile.png";
-
 import secureIcon from "../assets/SecureIcon.svg";
 import BBBIcon from "../assets/BBBIcon.svg";
 import APlusIcon from "../assets/APlus.svg";
 import quotes from "../assets/I WANT INTEREST-FREE.svg";
 import star from "../assets/Star 1.svg";
-import VideoImage from "../assets/images/IMG_9806 6.jpg";
+import VideoImage from "../assets/images/IMG_9806 6.png";
 import playIcon from "../assets/PlayIcon.svg";
-import SingleMachine from "../assets/images/SingleMachine.png";
-import StockHead from "../assets/images/StockHead.png";
-import { BsFacebook } from "react-icons/bs";
+import { BsHouse, BsGear, BsTelephone } from "react-icons/bs";
+import CustomBtn from "./CustomBtn";
+import MobileCard from "./MobileCard";
 
 const Home = () => {
   return (
@@ -36,7 +35,7 @@ const Home = () => {
             </div>
             <FormSeperateInputs>
               <input required type="select" placeholder="Country*" />
-              <button>Get a free quote</button>
+              <CustomBtn name="Get a free quote" />
               <div>
                 <img src={secureIcon} alt="SecureIcon" />
                 <img src={BBBIcon} alt="SecureIcon" />
@@ -87,6 +86,9 @@ const Home = () => {
             bibendum et in mattis nec duis nec, magna. Nunc, mattis purus dolor
             risus commodo. Tempus molestie morbi ultrices nunc.
             <span>Semper nam ridiculus duis bibendum risus, arcu arcu.</span>
+          </p>
+          <br />
+          <p>
             Nulla ut elementum, nibh viverra pharetra eu. Aliquet sem
             condimentum posuere cursus quis risus. Mauris, auctor ridiculus
             blandit lacus.
@@ -98,84 +100,42 @@ const Home = () => {
             Elit, scelerisque mauris aenean justo.
           </p>
         </TextContainer>
+        <StatsCard>
+          <StatsItem>
+            <StatsIcon>
+              <BsTelephone size={23} />
+            </StatsIcon>
+            <div>
+              <h3>24/7</h3>
+              <span>Lorem ipsum</span>
+            </div>
+          </StatsItem>
+          <Divider></Divider>
+          <StatsItem>
+            <StatsIcon>
+              <BsHouse size={24} />
+            </StatsIcon>
+            <div>
+              <h3>30+</h3>
+              <span>Lorem ipsum</span>
+            </div>
+          </StatsItem>
+          <Divider></Divider>
+          <StatsItem>
+            <StatsIcon>
+              <BsGear size={24} />
+            </StatsIcon>
+            <div>
+              <h3>50+</h3>
+              <span>Lorem ipsum</span>
+            </div>
+          </StatsItem>
+        </StatsCard>
       </SectionOne>
-      <StatsCard>
-        <div>
-          <div></div>
-          <span>24/7</span>
-          <span>Lorem ipsum</span>
-          <Divider></Divider>
-          <div></div>
-          <span>30+</span>
-          <span>Lorem ipsum</span>
-          <Divider></Divider>
-          <div></div>
-          <span>50+</span>
-          <span>Lorem ipsum</span>
-        </div>
-      </StatsCard>
       <SectionTwo>
         <h2>Mi tempus ultrices est tempus nibh eu vitae in.</h2>
-        <Card>
-          <div>
-            <h4>Starter Single-Head Embroidery Machine </h4>
-          </div>
-          <img src={SingleMachine} alt="" />
-          <h6>EM-1010</h6>
-          <p>10 Needles</p>
-          <QuoteCard>
-            <span>
-              <BsFacebook size={10} color={"blue"} />
-              <div>
-                <img src={quotes} alt="" />
-              </div>
-              <img src={StockHead} alt="" />
-            </span>
-            <p>Lorem ipsum dolor sit.</p>
-            <span>Vivera</span>
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-          </QuoteCard>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
-            auctor malesuada hendrerit nec, porttitor nunc tristique. Egestas
-            eget fermentum at eget nunc et nisi eu lorem.
-          </p>
-          <button>Dolor.</button>
-        </Card>
-        <Card>
-          <div>
-            <h4>Starter Single-Head Embroidery Machine </h4>
-          </div>
-          <img src={SingleMachine} alt="" />
-          <h6>EM-1010</h6>
-          <p>10 Needles</p>
-          <QuoteCard>
-            <span>
-              <BsFacebook size={10} color={"blue"} />
-              <div>
-                <img src={quotes} alt="" />
-              </div>
-              <img src={StockHead} alt="" />
-            </span>
-            <p>Lorem ipsum dolor sit.</p>
-            <span>Vivera</span>
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-          </QuoteCard>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
-            auctor malesuada hendrerit nec, porttitor nunc tristique. Egestas
-            eget fermentum at eget nunc et nisi eu lorem.
-          </p>
-          <button>Dolor.</button>
-        </Card>
+        <MobileCard />
+        <MobileCard />
       </SectionTwo>
     </LandingPage>
   );
@@ -183,11 +143,17 @@ const Home = () => {
 
 export default Home;
 const SectionOne = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   min-height: 100%;
   background-color: rgba(20, 125, 247);
   background-image: url(${BackgroundImg});
   background-size: cover;
   color: white;
+  position: relative;
+  padding-bottom: 12rem;
   div h1 {
     font-style: normal;
     font-weight: 700;
@@ -198,7 +164,16 @@ const SectionOne = styled.div`
     padding: 2rem 0;
   }
 `;
-const SectionTwo = styled.div``;
+const SectionTwo = styled.div`
+  padding-top: 8rem;
+  h2 {
+    text-align: center;
+    margin: 0 2rem 2rem 2rem;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 130%;
+  }
+`;
 const LandingPage = styled.section``;
 const FormContainer = styled.div`
   position: relative;
@@ -214,7 +189,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 0;
   background: white;
   gap: 10px;
   div {
@@ -231,16 +206,6 @@ const Form = styled.form`
   input {
     padding: 0.8rem 0.5rem;
     margin: 3px;
-  }
-  button {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 18px;
-    background: linear-gradient(90deg, #ff7200 0.93%, #fc9500 100%);
-    border-radius: 4px;
-    border: none;
-    color: white;
-    padding: 1em 0;
   }
   p {
     color: black;
@@ -294,15 +259,13 @@ const VideoImg = styled.img`
   width: 100%;
 `;
 
-//WIP
 const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  margin-top: 9rem;
-  width: 80vw;
+  margin: 5rem 2rem 0 2rem;
   position: relative;
 `;
 
@@ -319,8 +282,60 @@ const PlayBtn = styled.div`
     width: 20px;
   }
 `;
-const TextContainer = styled.div``;
-const StatsCard = styled.div``;
-const Divider = styled.div``;
-const Card = styled.div``;
-const QuoteCard = styled.div``;
+const TextContainer = styled.div`
+  margin: 0 2rem;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 38px;
+  span {
+    background: yellow;
+    color: black;
+    font-weight: 700;
+  }
+`;
+const StatsCard = styled.div`
+  margin: 0 2rem;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: -90px;
+`;
+const StatsItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  h3 {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  span {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #4f5665;
+  }
+`;
+const StatsIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #ffecec;
+  border-radius: 30px;
+`;
+const Divider = styled.div`
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 1px solid #eeeff2;
+`;

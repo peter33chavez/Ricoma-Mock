@@ -166,8 +166,8 @@ const RandomSection = styled.div`
   line-height: 31px;
   background: black;
   color: white;
-  width: 100vw;
-  padding: 3rem;
+  width: 100%;
+  padding: 1rem 0;
 `;
 const MarchMadness = styled.div`
   display: flex;

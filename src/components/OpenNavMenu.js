@@ -32,6 +32,7 @@ const OpenNavMenu = ({ setShowMenu, showMenu }) => {
 export default OpenNavMenu;
 
 const OpenMenu = styled.div`
+  z-index: 9999;
   background: white;
   width: 250px;
   height: 100vh;
