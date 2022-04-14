@@ -51,28 +51,34 @@ const Home = () => {
             </FormSeperateInputs>
             <div></div>
           </Form>
-          <QuoteBox>
-            <QuoteIcon>
-              <img src={quotes} alt="" />
-            </QuoteIcon>
-            <h4>Louis Marshall</h4>
-            <quote>
-              I love my Ri 1000. I got one a month or so ago and have printed
-              about 1,000 shirts so far! Great product!
-            </quote>
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-            <img src={star} alt="rating star" />
-          </QuoteBox>
+          <QuoteBoxContainer>
+            <QuoteBox>
+              <QuoteIcon>
+                <img src={quotes} alt="" />
+              </QuoteIcon>
+              <h4>Louis Marshall</h4>
+              <quote>
+                I love my Ri 1000. I got one a month or so ago and have printed
+                about 1,000 shirts so far! Great product!
+              </quote>
+              <br />
+              <div>
+                <img src={star} alt="rating star" />
+                <img src={star} alt="rating star" />
+                <img src={star} alt="rating star" />
+                <img src={star} alt="rating star" />
+                <img src={star} alt="rating star" />
+              </div>
+            </QuoteBox>
+          </QuoteBoxContainer>
         </FormContainer>
-
         <VideoContainer>
           <PlayBtn>
             <img src={playIcon} alt="play button" />
           </PlayBtn>
-          <img src={VideoImage} alt="Video placeholder" />
+          <div>
+            <VideoImg src={VideoImage} alt="Video placeholder" />
+          </div>
         </VideoContainer>
         <TextContainer>
           <p>
@@ -194,7 +200,9 @@ const SectionOne = styled.div`
 `;
 const SectionTwo = styled.div``;
 const LandingPage = styled.section``;
-const FormContainer = styled.div``;
+const FormContainer = styled.div`
+  position: relative;
+`;
 const SquareDecoration = styled.div`
   height: 300px;
   width: 100%;
@@ -202,6 +210,7 @@ const SquareDecoration = styled.div`
   background-size: cover;
 `;
 const Form = styled.form`
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -247,17 +256,58 @@ const FormSeperateInputs = styled.div`
   flex-direction: column;
   width: 100%;
 `;
-const QuoteBox = styled.div``;
-const QuoteIcon = styled.div`
-  background: var(--secondary-color);
+const QuoteBoxContainer = styled.div`
+  position: absolute;
+  bottom: -110px;
 `;
-const VideoContainer = styled.div`
-  width: auto;
-  img {
-    width: 100%;
+const QuoteBox = styled.div`
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  background: #f3f4f5;
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+
+  h4 {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 21px;
   }
 `;
+const QuoteIcon = styled.div`
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #ffaa00;
+`;
+const VideoImg = styled.img`
+  width: 100%;
+`;
+
+//WIP
+const VideoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 9rem;
+  width: 80vw;
+  position: relative;
+`;
+
 const PlayBtn = styled.div`
+  position: absolute;
   width: 50px;
   height: 50px;
   border-radius: 30px;
