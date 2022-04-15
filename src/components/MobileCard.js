@@ -68,6 +68,7 @@ const Card = styled.div`
   box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.25);
   border-radius: 1.5rem 1.5rem 0 0;
   margin-bottom: 2rem;
+  max-width: 570px;
 `;
 
 const CardHeader = styled.div`
