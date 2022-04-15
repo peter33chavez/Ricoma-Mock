@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Products from "./components/Products";
