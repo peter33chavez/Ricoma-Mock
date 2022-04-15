@@ -3,7 +3,7 @@ import FooterChangeBlock from "./FooterChangeBlock";
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <>
       <FooterChangeBlock />
       <RandomSection>
         <div>
@@ -16,9 +16,7 @@ const Footer = () => {
       </RandomSection>
       <MarchMadness>
         <div>
-          <h4>
-            March Madness Sale <br /> Expires Soon
-          </h4>
+          <h4>March Madness Sale Expires Soon</h4>
         </div>
         <div>
           <p>
@@ -37,13 +35,11 @@ const Footer = () => {
         </div>
         <button>Lorem ipsum</button>
       </MarchMadness>
-    </FooterContainer>
+    </>
   );
 };
 
 export default Footer;
-
-const FooterContainer = styled.footer``;
 
 const RandomSection = styled.div`
   display: flex;
@@ -66,8 +62,9 @@ const MarchMadness = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   background: #fcd002;
-  width: 100vw;
+  padding: 1rem 0;
   h4 {
     font-weight: 700;
     font-size: 19px;
@@ -86,11 +83,16 @@ const MarchMadness = styled.div`
     border: 2px solid white;
     border-radius: 30px;
     color: white;
-    padding: 10px 60px;
+    padding: 1rem 60px;
     margin: 1rem 0;
     font-family: "Source Sans Pr" o, sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 19px;
+  }
+  @media (min-width: 840px) {
+    padding: 0 8rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;

@@ -74,7 +74,7 @@ export default Products;
 
 const ProductsContainer = styled.div`
   background: #e5e5e5;
-  @media (min-width: 1464px) {
+  @media (min-width: 1432px) {
     background-image: url(${BannerImg});
     background-position: 0 75vh;
     background-repeat: no-repeat;
@@ -97,7 +97,7 @@ const HeaderText = styled.div`
     line-height: 38px;
   }
   @media (min-width: 840px) {
-    padding: 4rem 8rem;
+    padding: 4rem 9rem;
     h1 {
       font-size: 60px;
       line-height: 78px;
@@ -115,6 +115,6 @@ const AllProducts = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 2rem;
-    padding: 4rem 8rem;
+    padding: 4rem 7rem;
   }
 `;

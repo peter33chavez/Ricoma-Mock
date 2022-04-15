@@ -45,7 +45,6 @@ export default CartQuantityManager;
 const QuantityContainer = styled.div`
   display: flex;
   align-items: center;
-  font-family: "Work Sans", sans-serif;
   margin: 20px 0;
   p {
     margin: 0 15px;
@@ -53,7 +52,7 @@ const QuantityContainer = styled.div`
 `;
 const StyledBtn = styled.button`
   background: #f4f5ef;
-  color: #636c42;
+  color: black;
   display: flex;
   font-size: 14px;
   border: none;
@@ -66,6 +65,7 @@ const StyledBtn = styled.button`
   }
 `;
 const RemoveBtn = styled.button`
+  cursor: pointer;
   margin-left: 10px;
   border: none;
   background: none;

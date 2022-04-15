@@ -7,6 +7,7 @@ const CustomBtn = ({ name }) => {
 export default CustomBtn;
 
 const Button = styled.button`
+  cursor: pointer;
   font-weight: 700;
   font-size: 30px;
   line-height: 18px;
@@ -18,4 +19,7 @@ const Button = styled.button`
   box-shadow: 0px 4px 5px rgba(29, 88, 238, 0.14),
     0px 4px 5px rgba(238, 29, 36, 0.04);
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  :hover {
+    background: linear-gradient(90deg, #ff8827 0.93%, #ffa323 100%);
+  }
 `;

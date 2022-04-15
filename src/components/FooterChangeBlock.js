@@ -233,6 +233,7 @@ const Divider = styled.div`
   border: 0.5px solid #ffffff;
   margin: 1rem 0;
 `;
+
 //WEB VIEW SPECIFIC
 const WebFormat = styled.section`
   background: var(--primary-color);
@@ -278,5 +279,3 @@ const OurSupporters = styled.div`
     color: #a0a2a6;
   }
 `;
-
-// WEB END

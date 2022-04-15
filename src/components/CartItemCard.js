@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CartQuantityManager from "./CartQuantityManager";
 
-const CartItemCard = ({ item, quantity, setQuantity }) => {
+const CartItemCard = ({ item }) => {
   return (
     <ProductCard>
       <ImgContainer>
@@ -13,11 +13,7 @@ const CartItemCard = ({ item, quantity, setQuantity }) => {
           <p>${item.price}</p>
         </TitleAndPrice>
         <Quantity>
-          <CartQuantityManager
-            itemDetails={item}
-            quantity={quantity}
-            setQuantity={setQuantity}
-          />
+          <CartQuantityManager itemDetails={item} />
         </Quantity>
       </CheckoutDetails>
     </ProductCard>
