@@ -2,8 +2,10 @@ import styled from "styled-components";
 import InfoIcon from "../assets/Info Icon.svg";
 import { BiCheck } from "react-icons/bi";
 import { useState } from "react";
+import AddToCartBtn from "./AddToCartBtn";
 
 const ProductCard = ({
+  item,
   image,
   name,
   type,
@@ -53,7 +55,7 @@ const ProductCard = ({
             <h4>${price}</h4>
             <p>${discountedPrice}</p>
           </Price>
-          <OrderBtn>Order</OrderBtn>
+          <AddToCartBtn item={item} quantity={1} />
         </PriceOrderContainer>
       </ProductDetails>
     </Card>
@@ -172,21 +174,6 @@ const Price = styled.div`
     line-height: 25px;
     text-decoration-line: line-through;
   }
-`;
-
-const OrderBtn = styled.button`
-  width: 114px;
-  height: 44px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 25px;
-  text-align: center;
-  letter-spacing: 0.18em;
-  color: white;
-  background: var(--secondary-color);
-  border-radius: 4px;
-  border: none;
-  text-transform: uppercase;
 `;
 
 const InfoBox = styled.div`

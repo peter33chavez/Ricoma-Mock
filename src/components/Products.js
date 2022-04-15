@@ -1,9 +1,45 @@
 import styled from "styled-components";
 import BannerImg from "../assets/images/Banner-Image.png";
-import Machine2 from "../assets/images/MachinePhoto3.png";
-import Machine1 from "../assets/images/SingleMachine.png";
-import Machine3 from "../assets/images/MultiMachine.png";
 import ProductCard from "./ProductCard";
+import Machine1 from "../assets/images/SingleMachine.png";
+import Machine2 from "../assets/images/MachinePhoto3.png";
+import Machine3 from "../assets/images/MultiMachine.png";
+
+const items = [
+  {
+    id: 1,
+    image: Machine1,
+    name: "EM-1010",
+    type: "Starter Embroidery Machine",
+    needles: "10 Needles",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat nam ultrices sit cursus. Luctus diam ipsum amet sit.",
+    price: 5999,
+    discountedPrice: 7500,
+  },
+  {
+    id: 2,
+    image: Machine2,
+    name: "TC-1501",
+    type: "Commercial Embroidery Machine",
+    needles: "15 Needles",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat nam ultrices sit cursus. Luctus diam ipsum amet sit.",
+    price: 7999,
+    discountedPrice: 7500,
+  },
+  {
+    id: 3,
+    image: Machine3,
+    name: "MT-1501",
+    type: "Commercial Embroidery Machine",
+    needles: "10 Needles",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat nam ultrices sit cursus. Luctus diam ipsum amet sit.",
+    price: 8999,
+    discountedPrice: 7500,
+  },
+];
 
 const Products = () => {
   return (
@@ -16,33 +52,19 @@ const Products = () => {
         </p>
       </HeaderText>
       <AllProducts>
-        <ProductCard
-          image={Machine1}
-          name="EM-1010"
-          type="Starter Embroidery Machine"
-          needles="10 Needles"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat nam ultrices sit cursus. Luctus diam ipsum amet sit."
-          price={5999}
-          discountedPrice={7500}
-        />
-        <ProductCard
-          image={Machine2}
-          name="TC-1501"
-          type="Commercial Embroidery Machine"
-          needles="15 Needles"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat nam ultrices sit cursus. Luctus diam ipsum amet sit."
-          price={7999}
-          discountedPrice={7500}
-        />
-        <ProductCard
-          image={Machine3}
-          name="MT-1501"
-          type="Commercial Embroidery Machine"
-          needles="10 Needles"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat nam ultrices sit cursus. Luctus diam ipsum amet sit."
-          price={8999}
-          discountedPrice={7500}
-        />
+        {items.map((item) => (
+          <ProductCard
+            key={item.id}
+            item={item}
+            image={item.image}
+            name={item.name}
+            type={item.type}
+            needles={item.needles}
+            description={item.description}
+            price={item.price}
+            discountedPrice={item.discountedPrice}
+          />
+        ))}
       </AllProducts>
     </ProductsContainer>
   );

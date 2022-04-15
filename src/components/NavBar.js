@@ -103,7 +103,7 @@ const Logo = styled.div`
 const CartBtn = styled.button`
   cursor: pointer;
   margin: 0 10px;
-  color: black;
+  color: white;
   display: flex;
   background: none;
   border: none;

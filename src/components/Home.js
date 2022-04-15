@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import BackgroundImg from "../assets/images/hero-background-img.png";
-
 import { BsHouse, BsGear, BsTelephone } from "react-icons/bs";
-
 import MobileCard from "./MobileCard";
 import LandingPageBlock from "./LandingPageBlock";
 

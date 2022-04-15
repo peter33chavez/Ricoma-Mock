@@ -5,13 +5,12 @@ const CartItemCard = ({ item, quantity, setQuantity }) => {
   return (
     <ProductCard>
       <ImgContainer>
-        {/* TODO - set fixed width and height  */}
-        <img src={item.image_url} alt="" />
+        <img src={item.image} alt="" />
       </ImgContainer>
       <CheckoutDetails>
         <TitleAndPrice>
           <h3>{item.name}</h3>
-          <p>${(item.price / 100).toFixed(2)}</p>
+          <p>${item.price}</p>
         </TitleAndPrice>
         <Quantity>
           <CartQuantityManager
@@ -20,7 +19,6 @@ const CartItemCard = ({ item, quantity, setQuantity }) => {
             setQuantity={setQuantity}
           />
         </Quantity>
-        <p>Pickup</p>
       </CheckoutDetails>
     </ProductCard>
   );
@@ -29,12 +27,13 @@ const CartItemCard = ({ item, quantity, setQuantity }) => {
 export default CartItemCard;
 
 const ProductCard = styled.div`
+  margin: 1rem 0;
   display: flex;
   border-bottom: solid 1px #d3d3d3;
 `;
 
 const ImgContainer = styled.div`
-  margin-bottom: 20px;
+  margin: 1rem 0;
   > img {
     max-width: 114px;
     max-height: 114px;
@@ -63,6 +62,7 @@ const TitleAndPrice = styled.div`
 `;
 const Quantity = styled.div`
   display: flex;
+
   > input {
     height: 40px;
     width: 70px;

@@ -8,15 +8,13 @@ import {
 import { useDispatch } from "react-redux";
 
 const CartQuantityManager = ({ itemDetails }) => {
-  const currentStock = itemDetails.current_stock;
   const buyQuantity = itemDetails.buy_quantity;
   const dispatch = useDispatch();
 
   const updateStock = (updateOption) => {
     switch (updateOption) {
       case "increment":
-        currentStock > buyQuantity &&
-          dispatch(increaseBuyQuantity(itemDetails.id));
+        dispatch(increaseBuyQuantity(itemDetails.id));
         break;
       case "decrement":
         buyQuantity > 1 && dispatch(reduceBuyQuantity(itemDetails.id));
