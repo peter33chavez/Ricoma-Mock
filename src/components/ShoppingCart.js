@@ -1,4 +1,3 @@
-import { IoLocationSharp } from "react-icons/io5";
 import { CgClose } from "react-icons/cg";
 import CartTotal from "./CartTotal";
 import CartItemCard from "./CartItemCard";

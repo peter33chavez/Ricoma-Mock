@@ -1,61 +1,82 @@
 import styled from "styled-components";
 import BackgroundImg from "../assets/images/hero-background-img.png";
 import { BsHouse, BsGear, BsTelephone } from "react-icons/bs";
-import MobileCard from "./MobileCard";
+import ReviewCard from "./ReviewCard";
 import LandingPageBlock from "./LandingPageBlock";
+import { useState } from "react";
+import VideoImageWeb from "../assets/images/FullScreenVideo.png";
+import VideoImageMobile from "../assets/images/IMG_9806 6.png";
+import { CgClose } from "react-icons/cg";
 
 const Home = () => {
+  const [playVideo, setPlayVideo] = useState(false);
   return (
-    <LandingPage>
-      <SectionOne>
-        <div>
-          <h1>Dui Augue Lectus In Ut At Lorem</h1>
-        </div>
-        <LandingPageBlock />
-        <StatsCard>
-          <StatsItem>
-            <StatsIcon>
-              <BsTelephone size={23} />
-            </StatsIcon>
+    <>
+      {playVideo && (
+        <VideoView>
+          <VideoContainer>
+            <CloseIcon onClick={() => setPlayVideo(false)}>
+              <CgClose size={30} />
+            </CloseIcon>
             <div>
-              <h3>24/7</h3>
-              <span>Lorem ipsum</span>
+              <VideoImgWeb src={VideoImageWeb} alt="Video placeholder" />
+              <VideoImgMobile src={VideoImageMobile} alt="Video placeholder" />
             </div>
-          </StatsItem>
-          <Divider></Divider>
-          <StatsItem>
-            <StatsIcon>
-              <BsHouse size={24} />
-            </StatsIcon>
-            <div>
-              <h3>30+</h3>
-              <span>Lorem ipsum</span>
-            </div>
-          </StatsItem>
-          <Divider></Divider>
-          <StatsItem>
-            <StatsIcon>
-              <BsGear size={24} />
-            </StatsIcon>
-            <div>
-              <h3>50+</h3>
-              <span>Lorem ipsum</span>
-            </div>
-          </StatsItem>
-        </StatsCard>
-      </SectionOne>
-      <SectionTwo>
-        <h2>Mi tempus ultrices est tempus nibh eu vitae in.</h2>
-        <Cards>
-          <MobileCard />
-          <MobileCard />
-        </Cards>
-      </SectionTwo>
-    </LandingPage>
+          </VideoContainer>
+        </VideoView>
+      )}
+      <LandingPage>
+        <SectionOne>
+          <div>
+            <h1>Dui Augue Lectus In Ut At Lorem</h1>
+          </div>
+          <LandingPageBlock playVideo={playVideo} setPlayVideo={setPlayVideo} />
+          <StatsCard>
+            <StatsItem>
+              <StatsIcon>
+                <BsTelephone size={23} />
+              </StatsIcon>
+              <div>
+                <h3>24/7</h3>
+                <span>Lorem ipsum</span>
+              </div>
+            </StatsItem>
+            <Divider></Divider>
+            <StatsItem>
+              <StatsIcon>
+                <BsHouse size={24} />
+              </StatsIcon>
+              <div>
+                <h3>30+</h3>
+                <span>Lorem ipsum</span>
+              </div>
+            </StatsItem>
+            <Divider></Divider>
+            <StatsItem>
+              <StatsIcon>
+                <BsGear size={24} />
+              </StatsIcon>
+              <div>
+                <h3>50+</h3>
+                <span>Lorem ipsum</span>
+              </div>
+            </StatsItem>
+          </StatsCard>
+        </SectionOne>
+        <SectionTwo>
+          <h2>Mi tempus ultrices est tempus nibh eu vitae in.</h2>
+          <Cards>
+            <ReviewCard />
+            <ReviewCard />
+          </Cards>
+        </SectionTwo>
+      </LandingPage>
+    </>
   );
 };
 
 export default Home;
+
 const SectionOne = styled.div`
   display: flex;
   flex-direction: column;
@@ -160,4 +181,57 @@ const Divider = styled.div`
     height: 100px;
     margin: 0 3rem;
   }
+`;
+
+//video overlay
+
+const VideoView = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 500vh;
+  @media (max-width: 840px) {
+    background: rgba(0, 0, 0, 1);
+  }
+`;
+
+const VideoContainer = styled.div`
+  top: 20rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  @media (max-width: 840px) {
+    top: 80rem;
+  }
+`;
+
+const VideoImgWeb = styled.img`
+  width: 100%;
+  @media (max-width: 840px) {
+    display: none;
+  }
+`;
+const VideoImgMobile = styled.img`
+  width: 100%;
+  @media (min-width: 840px) {
+    display: none;
+  }
+`;
+
+const CloseIcon = styled.button`
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 134px;
+  border: none;
 `;

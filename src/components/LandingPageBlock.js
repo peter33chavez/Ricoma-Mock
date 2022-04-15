@@ -10,7 +10,7 @@ import VideoImage from "../assets/images/IMG_9806 6.png";
 import playIcon from "../assets/PlayIcon.svg";
 import CustomBtn from "./CustomBtn";
 
-const LandingPageBlock = () => {
+const LandingPageBlock = ({ playVideo, setPlayVideo }) => {
   return (
     <>
       <MobileContainer>
@@ -51,10 +51,10 @@ const LandingPageBlock = () => {
                 <img src={quotes} alt="" />
               </QuoteIcon>
               <h4>Louis Marshall</h4>
-              <quote>
+              <p>
                 I love my Ri 1000. I got one a month or so ago and have printed
                 about 1,000 shirts so far! Great product!
-              </quote>
+              </p>
               <br />
               <div>
                 <img src={star} alt="rating star" />
@@ -66,7 +66,7 @@ const LandingPageBlock = () => {
             </QuoteBox>
           </QuoteBoxContainer>
         </FormContainer>
-        <VideoContainer>
+        <VideoContainer onClick={() => setPlayVideo(true)}>
           <PlayBtn>
             <img src={playIcon} alt="play button" />
           </PlayBtn>
@@ -119,7 +119,7 @@ const LandingPageBlock = () => {
               Elit, scelerisque mauris aenean justo.
             </p>
           </TextContainer>
-          <VideoContainer>
+          <VideoContainer onClick={() => setPlayVideo(true)}>
             <PlayBtn>
               <img src={playIcon} alt="play button" />
             </PlayBtn>
@@ -160,10 +160,10 @@ const LandingPageBlock = () => {
                       <img src={quotes} alt="" />
                     </QuoteIcon>
                     <h4>Louis Marshall</h4>
-                    <quote>
+                    <p>
                       I love my Ri 1000. I got one a month or so ago and have
                       printed about 1,000 shirts so far! Great product!
-                    </quote>
+                    </p>
                     <br />
                     <div>
                       <img src={star} alt="rating star" />
@@ -321,10 +321,12 @@ const VideoContainer = styled.div`
   }
 `;
 
-const PlayBtn = styled.div`
+const PlayBtn = styled.button`
+  cursor: pointer;
   position: absolute;
   width: 50px;
   height: 50px;
+  border: none;
   border-radius: 30px;
   display: flex;
   justify-content: center;
