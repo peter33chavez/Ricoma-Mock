@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import BannerImg from "../assets/images/Banner-Image.png";
 import Machine2 from "../assets/images/MachinePhoto3.png";
 import Machine1 from "../assets/images/SingleMachine.png";
 import Machine3 from "../assets/images/MultiMachine.png";
@@ -52,11 +52,16 @@ export default Products;
 
 const ProductsContainer = styled.div`
   background: #e5e5e5;
+  @media (min-width: 1464px) {
+    background-image: url(${BannerImg});
+    background-position: 0 75vh;
+    background-repeat: no-repeat;
+  }
 `;
 const HeaderText = styled.div`
   color: var(--primary-color);
+  padding: 2rem;
   h1 {
-    padding: 2rem;
     font-weight: 700;
     font-size: 40px;
     line-height: 43px;
@@ -64,10 +69,17 @@ const HeaderText = styled.div`
     text-shadow: 0px 2px 0px rgba(34, 34, 34, 0.1);
   }
   p {
-    margin: 0 2rem 1rem 2rem;
+    padding-bottom: 1rem;
     font-weight: 300;
     font-size: 24px;
     line-height: 38px;
+  }
+  @media (min-width: 840px) {
+    padding: 4rem 8rem;
+    h1 {
+      font-size: 60px;
+      line-height: 78px;
+    }
   }
 `;
 const AllProducts = styled.div`
@@ -76,4 +88,11 @@ const AllProducts = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  @media (min-width: 840px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 2rem;
+    padding: 4rem 8rem;
+  }
 `;

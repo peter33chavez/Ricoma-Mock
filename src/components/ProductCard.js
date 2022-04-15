@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import InfoIcon from "../assets/Info Icon.svg";
 import { BiCheck } from "react-icons/bi";
+import { useState } from "react";
 
 const ProductCard = ({
   image,
@@ -11,15 +12,26 @@ const ProductCard = ({
   price,
   discountedPrice,
 }) => {
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <Card>
       <ImageSection>
         <ImageContainer>
           <img src={image} alt={name} />
         </ImageContainer>
-        <span>
+        <button onClick={() => setShowInfo(!showInfo)}>
           <img src={InfoIcon} alt="info Button" />
-        </span>
+        </button>
+        {showInfo && (
+          <InfoBox>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit
+              blandit in ullamcorper egestas massa. At nibh dictum vulputate
+              gravida sollicitudin lectus metus nunc massa. Ut ac at consectetur
+              non aliquet. Eget mi nunc erat.
+            </p>
+          </InfoBox>
+        )}
       </ImageSection>
       <ProductDetails>
         <h2>{name}</h2>
@@ -62,7 +74,10 @@ const ImageSection = styled.div`
   justify-content: center;
   position: relative;
   height: 216px;
-  span {
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
     position: absolute;
     top: 5px;
     right: 5px;
@@ -172,4 +187,21 @@ const OrderBtn = styled.button`
   border-radius: 4px;
   border: none;
   text-transform: uppercase;
+`;
+
+const InfoBox = styled.div`
+  padding: 2rem;
+  z-index: 9;
+  background: white;
+  position: absolute;
+  width: 261px;
+  height: 179px;
+  left: 150px;
+  top: 71px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #081f32;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
 `;

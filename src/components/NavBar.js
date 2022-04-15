@@ -2,13 +2,19 @@ import logo from "../assets/Ricoma Logo.svg";
 import styled from "styled-components";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FiMenu } from "react-icons/fi";
-
+import { selectItems } from "../features/cartSlice";
+import { toggleShowCart } from "../features/showCartSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import OpenNavMenu from "./OpenNavMenu";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const cart = useSelector(selectItems);
+
+  const dispatch = useDispatch();
   return (
     <Nav>
       <NavContainer>
@@ -35,11 +41,11 @@ const NavBar = () => {
           </li>
         </NavItems>
         <IconContainer>
-          <ShoppingCart>
-            <span>
-              <HiOutlineShoppingCart size={24} color={"white"} />
-            </span>
-          </ShoppingCart>
+          <CartBtn onClick={() => dispatch(toggleShowCart())}>
+            <HiOutlineShoppingCart size={24} color={"white"} />
+            {cart.length !== 0 && <span>{cart.length}</span>}
+          </CartBtn>
+
           <MenuBars onClick={() => setShowMenu(!showMenu)}>
             <FiMenu size={24} color={"white"} />
           </MenuBars>
@@ -94,8 +100,20 @@ const Logo = styled.div`
     width: 100%;
   }
 `;
-const ShoppingCart = styled.div`
+const CartBtn = styled.button`
   cursor: pointer;
+  margin: 0 10px;
+  color: black;
+  display: flex;
+  background: none;
+  border: none;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  > span {
+    margin-left: 3px;
+  }
 `;
 const IconContainer = styled.div`
   display: flex;
