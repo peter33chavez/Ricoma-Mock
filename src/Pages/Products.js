@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BannerImg from "../assets/images/Banner-Image.png";
-import ProductCard from "./ProductCard";
+import ProductCard from "../components/ProductCard";
 import Machine1 from "../assets/images/SingleMachine.png";
 import Machine2 from "../assets/images/MachinePhoto3.png";
 import Machine3 from "../assets/images/MultiMachine.png";

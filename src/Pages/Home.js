@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import BackgroundImg from "../assets/images/hero-background-img.png";
 import { BsHouse, BsGear, BsTelephone } from "react-icons/bs";
-import ReviewCard from "./ReviewCard";
-import LandingPageBlock from "./LandingPageBlock";
+import ReviewCard from "../components/ReviewCard";
+import LandingPageBlock from "../components/LandingPageBlock";
 import { useState } from "react";
 import VideoImageWeb from "../assets/images/FullScreenVideo.png";
 import VideoImageMobile from "../assets/images/IMG_9806 6.png";
